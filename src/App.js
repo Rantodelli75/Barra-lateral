@@ -1,5 +1,9 @@
 import "./estilos/codigo.css";
 import logo from "./estilos/imagenes/logo.jpeg";
+import slider1 from "./estilos/imagenes/slider1.jpg";
+import slider2 from "./estilos/imagenes/slider2.jpg";
+import slider3 from "./estilos/imagenes/slider3.jpg";
+import slider4 from "./estilos/imagenes/slider4.jpg";
 import { useState } from "react";
 import Axios from "axios";
 
@@ -13,13 +17,13 @@ function App() {
       username: username,
       password: password,
     }).then((response) => {
-      if(response.data.message){
+      if (response.data.message) {
         setLoginStatus(response.data.message);
-      }else{
+      } else {
         setLoginStatus(response.data[0].username);
       }
-    })
-  }
+    });
+  };
   return (
     <>
       <h1 className="Title">HUMBOLDT CRUD</h1>
@@ -29,16 +33,41 @@ function App() {
         </center>
         <h1>Iniciar Sesión</h1>
         <form>
-          <input type="text" placeholder="Usuario" onChange={(e) => {setUsername(e.target.value)}}/>
-          <input type="password" placeholder="Contraseña"  onChange={(e) => {setPassword(e.target.value)}}/>
+          <input
+            type="text"
+            placeholder="Usuario"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
           <input type="submit" onClick={login} value="Ingresar" />
-          <h1 style={{color: 'red'}}>{loginStatus}</h1>
+          <h1 style={{ color: "red" }}>{loginStatus}</h1>
           <a href="#">¿Olvidó su contraseña?</a>
           <br />
         </form>
       </div>
-      <div className="Novedades">
-        <img src="" alt="" />
+      <div class="slider-frame">
+        <ul>
+          <li>
+            <img src={slider1} alt="" />
+          </li>
+          <li>
+            <img src={slider2} alt="" />
+          </li>
+          <li>
+            <img src={slider3} alt="" />
+          </li>
+          <li>
+            <img src={slider4} alt="" />
+          </li>
+        </ul>
       </div>
     </>
   );

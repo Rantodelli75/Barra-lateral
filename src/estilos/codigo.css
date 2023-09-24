@@ -84,11 +84,66 @@ body {
   color: #b80f22;
 }
 
-.Novedades {
+.slider-frame {
   background: #b80f22;
   width: 700px;
   height: 700px;
   float: left;
   left: 20%;
   border-radius: 20px;
+}
+
+.slider-frame {
+  width: 500px;
+  height: auto;
+  margin: 50px auto 0;
+  overflow: hidden;
+  border: 30px #b80f22;
+}
+
+.slider-frame ul {
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: slide 16s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+  list-style: none;
+  width: 100%;
+}
+
+.slider-frame img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 0%;
+  }
+  20% {
+    margin-left: 0%;
+  }
+
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+
+  75% {
+    margin-left: -300%;
+  }
+  95% {
+    margin-left: -300%;
+  }
 }
