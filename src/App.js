@@ -32,7 +32,7 @@ function App() {
           <input type="text" placeholder="Usuario" onChange={(e) => {setUsername(e.target.value)}}/>
           <input type="password" placeholder="Contraseña"  onChange={(e) => {setPassword(e.target.value)}}/>
           <input type="submit" onClick={login} value="Ingresar" />
-          <h1 style={{color: 'red'}}>Aqui {loginStatus}</h1>
+          <h1 style={{color: 'red'}}>{loginStatus}</h1>
           <a href="#">¿Olvidó su contraseña?</a>
           <br />
         </form>
