@@ -1,75 +1,56 @@
-import "./estilos/codigo.css";
-import logo from "./estilos/imagenes/logo.jpeg";
-import slider1 from "./estilos/imagenes/slider1.jpg";
-import slider2 from "./estilos/imagenes/slider2.jpg";
-import slider3 from "./estilos/imagenes/slider3.jpg";
-import slider4 from "./estilos/imagenes/slider4.jpg";
-import { useState } from "react";
-import Axios from "axios";
+import logo from "./imagenes/logo.jpeg";
+import Inicio from "./imagenes/home.png";
+import Docente from "./imagenes/save.png";
+import Estudiante from "./imagenes/student.png";
+import Materias from "./imagenes/materias.png";
+import Usuarios from "./imagenes/users.png";
+import "./estilo.css";
 
 function App() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [loginStatus, setLoginStatus] = useState("");
-  const login = (e) => {
-    e.preventDefault();
-    Axios.post("http://localhost:3001/login", {
-      username: username,
-      password: password,
-    }).then((response) => {
-      if (response.data.message) {
-        setLoginStatus(response.data.message);
-      } else {
-        setLoginStatus(response.data[0].username);
-      }
-    });
-  };
   return (
-    <>
-      <h1 className="Title">HUMBOLDT CRUD</h1>
-      <div className="login-box">
-        <center>
-          <img src={logo} className="Logo" alt="Logo sice" />
-        </center>
-        <h1>Iniciar Sesión</h1>
-        <form>
-          <input
-            type="text"
-            placeholder="Usuario"
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-          />
-          <input
-            type="password"
-            placeholder="Contraseña"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-          <input type="submit" onClick={login} value="Ingresar" />
-          <h1 style={{ color: "red" }}>{loginStatus}</h1>
-          <a href="#">¿Olvidó su contraseña?</a>
-          <br />
-        </form>
+    <div class="menu">
+
+      <div class="title"><h1>OPERACIONES CRUD</h1></div>
+      <div class="logos"><img class="" src={logo} alt="" /></div>
+
+    <div class="opciones">
+      <div class=" Inicio">
+        <img src={Inicio} alt="" />
+        <a class="titulo" href="#"><h2>Inicio</h2></a>
       </div>
-      <div class="slider-frame">
-        <ul>
-          <li>
-            <img src={slider1} alt="" />
-          </li>
-          <li>
-            <img src={slider2} alt="" />
-          </li>
-          <li>
-            <img src={slider3} alt="" />
-          </li>
-          <li>
-            <img src={slider4} alt="" />
-          </li>
-        </ul>
+    
+      <div class="Docentes">
+      <img src={Docente} alt="" />
+        <a class="titulo" href="#"><h2>Docentes</h2></a>
       </div>
-    </>
+
+      <div class="Estudiantes">
+      <img src={Estudiante} alt="" />
+        <a class="titulo" href="#"><h2>Estudiante</h2></a>
+      </div>
+
+      <div class="Materias">
+      <img src={Materias} alt="" />
+      <a class="titulo" href="#"><h2>Materias</h2></a>
+      </div>
+
+      <div class="Secciones">
+      <img src={Materias} alt="" />
+      <a class="titulo" href="#"><h2>Secciones</h2></a>
+      </div>
+
+      <div class="Periodo">
+      <img src={Materias} alt="" />
+      <a class="titulo" href="#"><h2>Periodo</h2></a>
+      </div>
+
+      <div class="Usuarios">
+      <img src={Usuarios} alt="" />
+      <a class="titulo" href="#"><h2>Usuarios</h2></a>
+      </div>
+    </div>
+    </div>
+
   );
 }
 
